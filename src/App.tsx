@@ -7,6 +7,7 @@ const App = () => {
 
     const [items, setItems] = useState(CreateTable());
     const [attempts, setAttempts] = useState(0);
+    const [found, setFounds] = useState(false)
 
     const cellClick = (index: number) => {
       if (items[index].clicked) return;
@@ -16,11 +17,16 @@ const App = () => {
 
       setItems(newItems);
       setAttempts(attempts + 1);
+
+      if (newItems[index].hasItem) {
+          setFounds(1)
+      }
     };
 
     const resetGame = () => {
         setItems(CreateTable());
         setAttempts(0);
+        setFounds(0);
     };
 
     return (
@@ -29,7 +35,7 @@ const App = () => {
             <Board items={items} cellClick={cellClick}/>
             <div>
                 <p>Attempts: {attempts}</p>
-                <p>You found the treasure in {attempts} attempts</p>
+                {found && <p>You found the treasure in {attempts} attempts</p>}
                 <button type="button" onClick={resetGame}>Reset the Game</button>
             </div>
         </div>
