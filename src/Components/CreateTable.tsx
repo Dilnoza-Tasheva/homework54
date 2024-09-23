@@ -5,6 +5,10 @@ const CreateTable = () => {
         result.push({hasItem:false, clicked: false})
     }
 
+    const randomIndex = Math.floor(Math.random() * 36);
+
+    resurl[randomIndex].hasItem = true;
+
     return result;
 };
 
