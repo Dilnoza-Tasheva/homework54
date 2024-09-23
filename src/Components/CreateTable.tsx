@@ -7,7 +7,7 @@ const CreateTable = () => {
 
     const randomIndex = Math.floor(Math.random() * 36);
 
-    resurl[randomIndex].hasItem = true;
+    result[randomIndex].hasItem = true;
 
     return result;
 };
