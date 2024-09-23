@@ -1,7 +1,8 @@
 import React from 'react';
 import Cell from "../Cell/Cell.tsx";
+import './Board.css';
 
-interface Item {
+export interface Item {
     clicked: boolean;
     hasItem: boolean;
 }
@@ -13,7 +14,7 @@ interface Props {
 
 const Board: React.FC<Props> = ({items, cellClick}) => {
     return (
-        <div>
+        <div className="board">
             {items.map((item, index) => (
                 <Cell key={index} index={index} item={item} cellClick={cellClick} />
             ))}
