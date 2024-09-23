@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Cell = ({item, index}) => {
+const Cell = ({item, index, cellClick}) => {
     return (
-        <div>
+        <div onClick={() => cellClick(index)}>
             {item.clicked && item.hasItem ? '$' : ''}
         </div>
     );
