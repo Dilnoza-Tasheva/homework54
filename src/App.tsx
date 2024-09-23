@@ -19,14 +19,14 @@ const App = () => {
       setAttempts(attempts + 1);
 
       if (newItems[index].hasItem) {
-          setFounds(1);
+          setFounds(true);
       }
     };
 
     const resetGame = () => {
         setItems(CreateTable());
         setAttempts(0);
-        setFounds(0);
+        setFounds(false);
     };
 
     return (
