@@ -19,7 +19,7 @@ const App = () => {
       setAttempts(attempts + 1);
 
       if (newItems[index].hasItem) {
-          setFounds(1)
+          setFounds(1);
       }
     };
 
